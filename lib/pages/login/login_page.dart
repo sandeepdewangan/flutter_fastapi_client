@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
-  final nameController = TextEditingController();
   final pswdController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
     emailController.dispose();
-    nameController.dispose();
     pswdController.dispose();
   }
 
@@ -30,17 +28,11 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 20,
             children: [
-              const Text("Register"),
+              const Text("Login"),
               TextField(
                 controller: emailController,
                 decoration: const InputDecoration(
                   hintText: "Enter email-id",
-                ),
-              ),
-              TextField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  hintText: "Enter name",
                 ),
               ),
               TextField(
@@ -49,10 +41,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: "Enter password",
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Register")),
+              ElevatedButton(onPressed: () {}, child: Text("Login")),
               TextButton(
                 onPressed: () {},
-                child: Text("Already have account? Login."),
+                child: Text("Don't have account? Register."),
               ),
             ],
           ),
