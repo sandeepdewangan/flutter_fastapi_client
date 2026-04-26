@@ -1,1 +1,1 @@
-# FastAPI Flutter Integration App
+# Flutter FastAPI Integration App

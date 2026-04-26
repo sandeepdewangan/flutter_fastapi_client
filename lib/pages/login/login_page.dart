@@ -1,3 +1,5 @@
+import 'package:client/pages/register/register_page.dart';
+import 'package:client/repos/auth_repo.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -41,9 +43,23 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: "Enter password",
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Login")),
+              ElevatedButton(
+                onPressed: () async {
+                  final res = await AuthRepo().login(
+                    email: emailController.text,
+                    password: pswdController.text,
+                  );
+                  print(res);
+                },
+                child: Text("Login"),
+              ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegisterPage()),
+                  );
+                },
                 child: Text("Don't have account? Register."),
               ),
             ],
